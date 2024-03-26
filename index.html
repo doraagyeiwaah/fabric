@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your stylesheet -->
+    <link rel="icon" href="1.jpg" type="image/x-icon"> <!-- Favicon -->
+    <title>DORA A. AGYEIWAA</title>
+    <link rel="stylesheet" href="style.css">
+	
+
+</head>
+
+<body>
+
+<nav>
+    <img src="images/da.jpg" style="height: 50px; width: 50px; border-radius: 10px" alt="Logo">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        
+        <li><a href="about.html">About</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+
+<header>
+    <h1>Welcome to DORA'S WEBSITE</h1>
+</header>
+	
+	
+	
+ <div class="slider-container">
+        <div class="slides">
+            <div class="slide"><img src="images/ag.jpg" alt="Slide 1" style="height:100%;width:100%"></div>
+            <div class="slide"><img src="images/a.jpeg" alt="Slide 2" style="height:100%;width:100%"></div>
+           
+			<div class="slide"><img src="images/da.jpg" alt="Slide 2" style="height:100%;width:100%"></div>
+            <!-- Add more slides as needed -->
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="prev" onclick="prevSlide()">&#10094;</div>
+        <div class="next" onclick="nextSlide()">&#10095;</div>
+    </div>
+   
+
+<main>
+        <table>
+            <tr>
+                <th>lace</th> 
+                <th>location</th>
+            </tr>
+            <tr>
+                <td>indian lace</td>
+                <td>india</td>
+            </tr>
+            <tr>
+                <td>kente</td>
+                
+                <td>ghana</td>
+            </tr>
+			  <tr>
+                <td> office wear</td>
+               
+                <td>U.K</td>
+            </tr>
+			  <tr>
+                <td>dinner wear</td>
+                
+                <td>Togo</td>
+            </tr>
+        </table>
+    </main> 
+	
+	
+   <br><br><br><br><br><br><br><br><br><br><br><br> 
+   <footer>
+        <p>&copy; 2024 Designed By DORA . AGYEIWAA</p>
+    </footer>
+	
+
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+  var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 3,
+  loop: true,
+  grabCursor: true,
+  loopFillGroupWithBlank: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+  
+  </script>
+  
+    <script>
+        let currentIndex = 0;
+		const intervalTime =5000;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const slideWidth = document.querySelector('.slide').offsetWidth;
+            slides.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+            const totalSlides = document.querySelectorAll('.slide').length;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            const totalSlides = document.querySelectorAll('.slide').length;
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        }
+		
+		setInterval(() =>{
+		nextSlide();
+		}, intervalTime);
+    </script>
+	
+</body>
+
+</html>
